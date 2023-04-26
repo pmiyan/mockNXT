@@ -1,0 +1,50 @@
+<h1>New user</h1>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.label :user_type %>
+    <%= f.text_field :user_type %>
+  </div>
+
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div>
+    <%= f.label :average_minutes_used_last_30_days %>
+    <%= f.number_field :average_minutes_used_last_30_days %>
+  </div>
+
+  <div>
+    <%= f.label :fees_last_30_days %>
+    <%= f.number_field :fees_last_30_days %>
+  </div>
+
+  <div>
+    <%= f.label :initial_access %>
+    <%= f.datetime_field :initial_access %>
+  </div>
+
+  <div>
+    <%= f.label :last_access %>
+    <%= f.datetime_field :last_access %>
+  </div>
+  
+  <%= f.submit "Create User" %>
+<% end %>
