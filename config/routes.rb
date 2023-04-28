@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   #resources :users
   root to: 'dashboard#index'
   get 'home' => 'dashboard#home'
+
+  namespace :api do
+    namespace :v1 do
+      get 'users' => 'users#index'
+    end
+  end
 end

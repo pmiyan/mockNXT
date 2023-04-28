@@ -1,7 +1,5 @@
-<%# Create a landing page in the root of the site %>
-<%# Add content to the home page of MockNXT app %>
-<%# Just a big banner and then a sample image %>
 <h1>MockNXT</h1>
 <p>MockNXT is a web application that allows users to create mockups of their websites. It is a simple and easy to use tool that allows users to create mockups of their websites and share them with others.</p>
-<%= button_to "Sign in with OAuth2", user_events360_omniauth_authorize_path, method: :post, form: { "data-turbo-action": "replace" } %>
-
+<%= form_tag user_events360_omniauth_authorize_path, method: :post do %>
+  <%= button_tag "Sign in with Events 360", type: :submit, data: { turbo: "false" } %>
+<% end %>

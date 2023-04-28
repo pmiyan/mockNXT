@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_27_213314) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_28_231509) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.boolean "access_enabled"
-    t.string "app"
+    t.boolean "access_enabled", default: true
     t.string "password"
-    t.string "user_type"
+    t.string "user_type", default: "user"
     t.string "location"
-    t.integer "average_minutes_used_last_30_days"
-    t.decimal "fees_last_30_days"
+    t.integer "average_minutes_used_last_30_days", default: 0
+    t.decimal "fees_last_30_days", default: "0.0"
     t.datetime "initial_access"
     t.datetime "last_access"
     t.datetime "created_at", null: false
