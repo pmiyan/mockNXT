@@ -8,9 +8,51 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= turbo_include_tags %>
   </head>
 
+  <style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .display: inline {
+    float: left;
+  }
+
+  li {
+    padding: 10px;
+    float: left;
+  }
+
+  li a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .rightli {
+    float: right;
+  }
+
+  </style>
   <body>
+    <ul class="nav nav-pills">
+      <li><%= link_to "Home", root_path, class: "active" %>
+      <li class="rightli">
+        <% if !user_signed_in? %>
+          <%= link_to "Login", new_user_session_path%>
+        <% else %>
+          <%= link_to "Logout", destroy_user_session_path%>
+        <% end %>
+    </ul>
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
