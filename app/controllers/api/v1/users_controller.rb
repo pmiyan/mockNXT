@@ -13,10 +13,14 @@ class Api::V1::UsersController < ApplicationController
       created_at = user.created_at.strftime("%Y-%m-%d")
       updated_at = user.updated_at.strftime("%Y-%m-%d")
       {
+        id: user.id,
+        name: user.name,
+        email: user.email,
         access_enabled: access_enabled,
         app: app,
-        average_minutes_used_last_30_days: average_minutes_used_last_30_days,
         user_type: user_type,
+        location: user.location,
+        average_minutes_used_last_30_days: average_minutes_used_last_30_days,
         initial_access: initial_access,
         last_access: last_access,
         created_at: created_at,
