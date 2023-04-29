@@ -28,7 +28,7 @@ class Api::V1::UsersController < ApplicationController
       }
     end
 
-    render json: { user_info: user_info }
+    render json: user_info
   end
 
   def authenticate_server
