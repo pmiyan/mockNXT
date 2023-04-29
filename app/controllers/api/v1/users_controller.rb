@@ -7,6 +7,7 @@ class Api::V1::UsersController < ApplicationController
       access_enabled = user.access_enabled
       app = "MockNXT"
       average_minutes_used_last_30_days = user.average_minutes_used_last_30_days
+      fees_last_30_days = user.fees_last_30_days.to_f
       user_type = user.user_type
       initial_access = user.created_at.strftime("%Y-%m-%d")
       last_access = user.last_access.strftime("%Y-%m-%d")
@@ -21,6 +22,7 @@ class Api::V1::UsersController < ApplicationController
         user_type: user_type,
         location: user.location,
         average_minutes_used_last_30_days: average_minutes_used_last_30_days,
+        fees_last_30_days: fees_last_30_days,
         initial_access: initial_access,
         last_access: last_access,
         created_at: created_at,
