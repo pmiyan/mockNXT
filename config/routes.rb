@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   get 'dashboard/index'
   #root 'users#index'
-  #resources :users
+  resources :users
   root to: 'dashboard#index'
   get 'home' => 'dashboard#home'
 
