@@ -5,7 +5,6 @@ class DashboardController < ApplicationController
     if user_signed_in?
       redirect_to home_path
     end
-    puts ENV['NXT_APP_ID']
   end
 
   def home
