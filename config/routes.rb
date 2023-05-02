@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+  devise_scope :user do
+    get 'users/logout_callback', to: 'users/sessions#logout_callback', as: :logout_callback
+  end
   
   get 'dashboard/index'
   #root 'users#index'

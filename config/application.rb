@@ -11,7 +11,7 @@ module MockNXT
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    config.session_store :cookie_store, key: '_mock_nxt_session', same_site: :strict, secure: Rails.env.production?
+    config.session_store :cookie_store, key: '_mock_nxt_session', same_site: :lax, secure: Rails.env.production?
 
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')
